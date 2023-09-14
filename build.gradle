@@ -17,3 +17,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task runPortListener(type: JavaExec) {
+    mainClass = 'org.example.PortListener'  // Specify the main class
+    classpath sourceSets.main.runtimeClasspath
+    args '3600', '1-9089', '9091-65000'  // Replace with your desired arguments
+}
